@@ -91,7 +91,7 @@ server.get("/weather",  async (request, response) => {
 server.get(
   "/movie"
   ,async(request,response)=>{
-
+//
   const nameOfCity1 = request.query.searchQ;
 
   const moviesResponse= await axios.get(`https://api.themoviedb.org/3/search/movie?&api_key=${MOVIE_API_KEY}&query=${nameOfCity1}`);
