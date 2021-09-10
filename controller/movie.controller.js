@@ -1,11 +1,11 @@
 const axios = require("axios"); 
 require('dotenv').config();
 
-const Movie = require('./models/movie.model');
+const Movie = require('../models/movie.model');
 const MOVIE_API_KEY = process.env.MOVIE_API_KEY;
 
 
-const getMovie= server.get("/movie", async (request, response) => {
+const getMovie= async (request, response) => {
     const nameOfCity1 = request.query.searchQ;
   
     const moviesResponse = await axios.get(
@@ -16,6 +16,6 @@ const getMovie= server.get("/movie", async (request, response) => {
       return new Movie(item);
     });
     response.json(newMovie);
-  });
+  };
 
   module.exports = getMovie;
